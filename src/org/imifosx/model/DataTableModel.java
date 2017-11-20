@@ -11,6 +11,11 @@ import org.imifosx.utils.Constants;
  * Created by reehan.a on 03-07-2015.
  */
 public class DataTableModel extends AbstractTableModel implements Constants {
+	/**
+	 * Generated Serial Version UID
+	 */
+	private static final long serialVersionUID = 915865442759071119L;
+
 	String[] columnNames;
 	Object[][] data;
 
@@ -65,7 +70,7 @@ public class DataTableModel extends AbstractTableModel implements Constants {
 	 * each cell. If we didn't implement this method, then the last column would
 	 * contain text ("true"/"false"), rather than a check box.
 	 */
-	public Class getColumnClass(int c) {
+	public Class<? extends Object> getColumnClass(int c) {
 		return getValueAt(0, c).getClass();
 	}
 

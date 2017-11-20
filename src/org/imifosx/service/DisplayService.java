@@ -25,6 +25,11 @@ import org.imifosx.utils.DateDataGenerator;
 import org.imifosx.utils.SpringUtilities;
 
 public class DisplayService extends JPanel implements Constants {
+	/**
+	 * Generated Serial Version UID 
+	 */
+	private static final long serialVersionUID = 521703867479733177L;
+
 	private JTable table;
 	private JTextField dateText;
 	private JTextField intervalText;
