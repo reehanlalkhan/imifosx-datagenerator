@@ -129,7 +129,7 @@ public class DateDataGenerator implements Constants {
 		addDataToMap(CREATED_DATE, DOUBLE_QUOTES + dateStr + DOUBLE_QUOTES);
 
 		// With time
-		convertDateToFormattedString(date, generateRandomTime());
+		dateStr = convertDateToFormattedString(date, generateRandomTime());
 		addDataToMap(TRANSACTION_DATE, DOUBLE_QUOTES + dateStr + DOUBLE_QUOTES);
 
 	}
