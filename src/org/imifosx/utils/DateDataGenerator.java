@@ -111,7 +111,7 @@ public class DateDataGenerator implements Constants {
 		}
 		localDate = localCalendar.getTime();
 		loanMaturityDateString = convertDateToFormattedString(localDate, null);
-		System.out.println("\"\"\"" + loanMaturityDateString + "\"\"\"");
+		// System.out.println("\"\"\"" + loanMaturityDateString + "\"\"\"");
 	}
 
 	private Time generateRandomTime() {
@@ -142,6 +142,10 @@ public class DateDataGenerator implements Constants {
 		addDataToMap(CREATED_DATE, DOUBLE_QUOTES + dateStr + DOUBLE_QUOTES);
 
 	}
+	
+	private void addDataToMap(final String key, int value) {
+		addDataToMap(key, value + EMPTY_STRING);
+	}
 
 	private void addDataToMap(final String key, String value) {
 		List<String> dataList = dataMap.get(key);
@@ -164,11 +168,11 @@ public class DateDataGenerator implements Constants {
 	 */
 	private void populateDataForAmount(final int amount, final int duration) {
 		// Appending empty string just to auto-convert the int to String
-		addDataToMap(AMOUNT, amount + EMPTY_STRING);
-		addDataToMap(OUTSTANDING, amount + EMPTY_STRING);
+		addDataToMap(AMOUNT, amount);
+		addDataToMap(OUTSTANDING, amount);
 
-		addDataToMap(AMOUNT, 0 + EMPTY_STRING);
-		addDataToMap(AMOUNT, 0 + EMPTY_STRING);
+		addDataToMap(AMOUNT, 0);
+		addDataToMap(AMOUNT, 0);
 		addDataToMap(OUTSTANDING, EMPTY_STRING);
 		addDataToMap(OUTSTANDING, EMPTY_STRING);
 
@@ -176,19 +180,19 @@ public class DateDataGenerator implements Constants {
 		int installment = amount / duration;
 		while (amountCollected < amount) {
 			amountCollected += installment;
-			addDataToMap(AMOUNT, installment + EMPTY_STRING);
-			addDataToMap(OUTSTANDING, (amount - amountCollected) + EMPTY_STRING);
+			addDataToMap(AMOUNT, installment);
+			addDataToMap(OUTSTANDING, (amount - amountCollected));
 		}
 	}
 
 	public static void main(String[] args) {
-		String[] dataArray = new String[] { "2017-08-01", "2017-08-02",
+		String[] dataArray = new String[] { "2017-08-01", "2017-11-02",
 				"2017-08-05", "2017-08-07", "2017-08-10", "2017-08-12",
-				"2017-08-12", "2017-08-16", "2017-08-17", "2017-08-29",
-				"2017-09-07", "2017-09-08", "2017-09-13", "2017-09-13",
-				"2017-09-14", "2017-09-14", "2017-09-22", "2017-09-22",
+				"2017-09-12", "2017-08-16", "2017-08-17", "2017-08-29",
+				"2017-09-07", "2017-09-08", "2017-09-13", "2017-11-13",
+				"2017-09-14", "2017-10-10", "2017-08-22", "2017-09-22",
 				"2017-09-26", "2017-09-27", "2017-09-28", "2017-10-05",
-				"2017-10-12", "2017-10-18", "2017-10-28" };
+				"2017-11-12", "2017-10-18", "2017-10-28", };
 		DateDataGenerator generator = new DateDataGenerator();
 		for (String data : dataArray) {
 			generator.generateData(1, 10, 100, null, data);
