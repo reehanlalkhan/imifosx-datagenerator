@@ -11,8 +11,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
 public class DateDataGenerator implements Constants {
 	private SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 	private Map<String, List<String>> dataMap = new HashMap<String, List<String>>();
@@ -39,22 +37,23 @@ public class DateDataGenerator implements Constants {
 	 *            - The date user profile was created in the system
 	 * @return
 	 */
-	public Map<String, List<String>> generateData(int interval, int duration, int amount, String joiningDate, String loanDateStr) {
+	public Map<String, List<String>> generateData(int interval, int duration,
+			int amount, String joiningDate, String loanDateStr) {
 		/*
 		 * These are the needed variables that needs to be initialized for
 		 * proper values generation
 		 */
 		ArgumentsContainer container = null;
 		Date loanDate = null;
-		
-		if(null != loanDateStr && !loanDateStr.isEmpty()){
+
+		if (null != loanDateStr && !loanDateStr.isEmpty()) {
 			container = new ArgumentsContainer(loanDateStr);
-			loanDate =  container.generateDateFromGivenValues();
-		}else{
+			loanDate = container.generateDateFromGivenValues();
+		} else {
 			container = new ArgumentsContainer(joiningDate);
 			Date joinedDate = container.generateDateFromGivenValues();
 			// System.out.println("First:" + joinedDate.toString());
-			loanDate =  generateRandomDateAfter(joinedDate);
+			loanDate = generateRandomDateAfter(joinedDate);
 		}
 		// System.out.println("Second:" + loanDate.toString());
 
@@ -66,7 +65,8 @@ public class DateDataGenerator implements Constants {
 
 	private Date generateRandomDateAfter(Date joiningDate) {
 		Date curDate = Calendar.getInstance().getTime();
-		Date randomDate = new Date(ThreadLocalRandom.current().nextLong(joiningDate.getTime(), curDate.getTime()));
+		Date randomDate = new Date(ThreadLocalRandom.current().nextLong(
+				joiningDate.getTime(), curDate.getTime()));
 		return randomDate;
 	}
 
@@ -78,7 +78,8 @@ public class DateDataGenerator implements Constants {
 	 * @param interval
 	 * @param duration
 	 */
-	private void populateLoanDateAndCollectionDates(final Date startingDate, final int interval, final int duration) {
+	private void populateLoanDateAndCollectionDates(final Date startingDate,
+			final int interval, final int duration) {
 		int iCounter = 0;
 
 		Calendar localCalendar = Calendar.getInstance();
@@ -110,6 +111,7 @@ public class DateDataGenerator implements Constants {
 		}
 		localDate = localCalendar.getTime();
 		loanMaturityDateString = convertDateToFormattedString(localDate, null);
+		System.out.println("\"\"\"" + loanMaturityDateString + "\"\"\"");
 	}
 
 	private Time generateRandomTime() {
@@ -133,11 +135,11 @@ public class DateDataGenerator implements Constants {
 		String dateStr;
 		// Without time
 		dateStr = convertDateToFormattedString(date, null);
-		addDataToMap(CREATED_DATE, DOUBLE_QUOTES + dateStr + DOUBLE_QUOTES);
+		addDataToMap(TRANSACTION_DATE, DOUBLE_QUOTES + dateStr + DOUBLE_QUOTES);
 
 		// With time
 		dateStr = convertDateToFormattedString(date, generateRandomTime());
-		addDataToMap(TRANSACTION_DATE, DOUBLE_QUOTES + dateStr + DOUBLE_QUOTES);
+		addDataToMap(CREATED_DATE, DOUBLE_QUOTES + dateStr + DOUBLE_QUOTES);
 
 	}
 
@@ -177,6 +179,21 @@ public class DateDataGenerator implements Constants {
 			addDataToMap(AMOUNT, installment + EMPTY_STRING);
 			addDataToMap(OUTSTANDING, (amount - amountCollected) + EMPTY_STRING);
 		}
+	}
+
+	public static void main(String[] args) {
+		String[] dataArray = new String[] { "2017-08-01", "2017-08-02",
+				"2017-08-05", "2017-08-07", "2017-08-10", "2017-08-12",
+				"2017-08-12", "2017-08-16", "2017-08-17", "2017-08-29",
+				"2017-09-07", "2017-09-08", "2017-09-13", "2017-09-13",
+				"2017-09-14", "2017-09-14", "2017-09-22", "2017-09-22",
+				"2017-09-26", "2017-09-27", "2017-09-28", "2017-10-05",
+				"2017-10-12", "2017-10-18", "2017-10-28" };
+		DateDataGenerator generator = new DateDataGenerator();
+		for (String data : dataArray) {
+			generator.generateData(1, 10, 100, null, data);
+		}
+
 	}
 
 }
