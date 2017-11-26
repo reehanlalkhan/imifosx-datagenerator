@@ -100,7 +100,7 @@ public class DisplayService extends JPanel implements Constants {
 
 		JLabel loan_label = new JLabel(LOAN_DATE, SwingConstants.TRAILING);
 		loanDateText = new JTextField();
-		loanDateText.setEditable(false);
+		// loanDateText.setEditable(false);
 		loan_label.setLabelFor(dateText);
 		form.add(loan_label);
 		form.add(loanDateText);
@@ -127,7 +127,7 @@ public class DisplayService extends JPanel implements Constants {
 				String date = dateText.getText();
 				if (validateData(date, intervalText.getText(), amountText.getText(), durationText.getText())) {
 					DateDataGenerator generator = new DateDataGenerator();
-					Map<String, List<String>> tableData = generator.generateData(interval, duration, amount, date);
+					Map<String, List<String>> tableData = generator.generateData(interval, duration, amount, date, loanDateText.getText());
 					DataTableModel model = new DataTableModel(tableData);
 					table.setModel(model);
 					loanDateText.setText(generator.getLoanDate());

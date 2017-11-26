@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 public class DateDataGenerator implements Constants {
 	private SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 	private Map<String, List<String>> dataMap = new HashMap<String, List<String>>();
@@ -37,18 +39,23 @@ public class DateDataGenerator implements Constants {
 	 *            - The date user profile was created in the system
 	 * @return
 	 */
-	public Map<String, List<String>> generateData(int interval, int duration, int amount, String joiningDate) {
+	public Map<String, List<String>> generateData(int interval, int duration, int amount, String joiningDate, String loanDateStr) {
 		/*
 		 * These are the needed variables that needs to be initialized for
 		 * proper values generation
 		 */
-
-		ArgumentsContainer container = new ArgumentsContainer(joiningDate);
-
-		Date joinedDate = container.generateDateFromGivenValues();
-		// System.out.println("First:" + joinedDate.toString());
-
-		Date loanDate = generateRandomDateAfter(joinedDate);
+		ArgumentsContainer container = null;
+		Date loanDate = null;
+		
+		if(null != loanDateStr && !loanDateStr.isEmpty()){
+			container = new ArgumentsContainer(loanDateStr);
+			loanDate =  container.generateDateFromGivenValues();
+		}else{
+			container = new ArgumentsContainer(joiningDate);
+			Date joinedDate = container.generateDateFromGivenValues();
+			// System.out.println("First:" + joinedDate.toString());
+			loanDate =  generateRandomDateAfter(joinedDate);
+		}
 		// System.out.println("Second:" + loanDate.toString());
 
 		populateLoanDateAndCollectionDates(loanDate, interval, duration);
@@ -76,7 +83,7 @@ public class DateDataGenerator implements Constants {
 
 		Calendar localCalendar = Calendar.getInstance();
 		localCalendar.setTime(startingDate);
-		if (localCalendar.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+		if (localCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
 			localCalendar.add(Calendar.DATE, 1);
 		}
 
@@ -91,7 +98,7 @@ public class DateDataGenerator implements Constants {
 		addDateToDataMap(startingDate);
 		addDateToDataMap(startingDate);
 
-		localCalendar.add(Calendar.DATE, 1);
+		// localCalendar.add(Calendar.DATE, 1);
 
 		while (iCounter < duration) {
 			localCalendar.add(Calendar.DATE, 1);

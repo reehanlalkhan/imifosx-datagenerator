@@ -32,7 +32,7 @@ public class ArgumentsContainer implements Constants {
 
 	public Date generateDateFromGivenValues() {
 		Calendar cal = Calendar.getInstance();
-		cal.set(year, month, date);
+		cal.set(year, month - 1, date);
 		Date valuesDate = cal.getTime();
 		return valuesDate;
 
