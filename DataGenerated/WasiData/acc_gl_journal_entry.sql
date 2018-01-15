@@ -1,4 +1,4 @@
-insert into acc_gl_journal_entry (id,account_id,office_id,reversal_id,currency_code,transaction_id,loan_transaction_id,savings_transaction_id,client_transaction_id,reversed,ref_num,manual_entry,entry_date,type_enum,amount,description,entity_type_enum,entity_id,createdby_id,lastmodifiedby_id,created_date,lastmodified_date,is_running_balance_calculated,office_running_balance,organization_running_balance,payment_details_id) values
+INSERT INTO acc_gl_journal_entry (id,account_id,office_id,reversal_id,currency_code,transaction_id,loan_transaction_id,savings_transaction_id,client_transaction_id,reversed,ref_num,manual_entry,entry_date,type_enum,amount,description,entity_type_enum,entity_id,createdby_id,lastmodifiedby_id,created_date,lastmodified_date,is_running_balance_calculated,office_running_balance,organization_running_balance,payment_details_id) VALUES
 ('1','1','1',NULL,'INR','898a97943333',NULL,NULL,NULL,'0',NULL,'1','2017-08-01','2','1330.000000',NULL,NULL,NULL,'1','1','2017-08-01 15:00:00','2017-08-01 15:00:00','0','0.000000','0.000000',Null),
 ('2','2','1',NULL,'INR','898a97943343',NULL,NULL,NULL,'0',NULL,'1','2017-08-01','2','1530.000000',NULL,NULL,NULL,'1','1','2017-08-01 15:00:00','2017-08-01 15:00:00','0','0.000000','0.000000',Null),
 ('3','3','1',NULL,'INR','898a97943543',NULL,NULL,NULL,'0',NULL,'1','2017-08-01','2','1350.000000',NULL,NULL,NULL,'1','1','2017-08-01 15:00:00','2017-08-01 15:00:00','0','0.000000','0.000000',Null),
@@ -34,7 +34,7 @@ insert into acc_gl_journal_entry (id,account_id,office_id,reversal_id,currency_c
 ('33','3','1',NULL,'INR','898a65398453',NULL,NULL,NULL,'0',NULL,'1','2017-09-01','2','1250.000000',NULL,NULL,NULL,'1','1','2017-09-01 08:39:47','2017-09-01 08:39:47','0','0.000000','0.000000',Null),
 ('34','4','1',NULL,'INR','898a65323543',NULL,NULL,NULL,'0',NULL,'1','2017-09-01','2','1360.000000',NULL,NULL,NULL,'1','1','2017-09-01 22:31:52','2017-09-01 22:31:52','0','0.000000','0.000000',Null),
 ('35','5','1',NULL,'INR','898a65398453',NULL,NULL,NULL,'0',NULL,'1','2017-09-01','2','500.000000',NULL,NULL,NULL,'1','1','2017-09-01 05:06:28','2017-09-01 05:06:28','0','0.000000','0.000000',Null),
-('36','6','1',NULL,'INR','898a65312543',NULL,NULL,NULL,'0',NULL,'1','2017-09-02','2','500.000000',NULL,NULL,NULL,'1','1','2017-09-02 05:39:47"" ",'2017-09-02 05:39:47"" ",'0','0.000000','0.000000',Null),
+('36','6','1',NULL,'INR','898a65312543',NULL,NULL,NULL,'0',NULL,'1','2017-09-02','2','500.000000',NULL,NULL,NULL,'1','1','2017-09-02 05:39:47','2017-09-02 05:39:47','0','0.000000','0.000000',Null),
 ('37','7','1',NULL,'INR','898a89398543',NULL,NULL,NULL,'0',NULL,'1','2017-09-22','2','230.000000',NULL,NULL,NULL,'1','1','2017-09-22 07:39:47','2017-09-22 07:39:47','0','0.000000','0.000000',Null),
 ('38','8','1',NULL,'INR','898a65398993',NULL,NULL,NULL,'0',NULL,'1','2017-09-12','2','143.000000',NULL,NULL,NULL,'1','1','2017-09-12 01:39:47','2017-09-12 01:39:47','0','0.000000','0.000000',Null),
 ('39','9','1',NULL,'INR','898a65392943',NULL,NULL,NULL,'0',NULL,'1','2017-09-05','2','1000.000000',NULL,NULL,NULL,'1','1','2017-09-05 08:30:47','2017-09-05 08:30:47','0','0.000000','0.000000',Null),
@@ -185,7 +185,7 @@ insert into acc_gl_journal_entry (id,account_id,office_id,reversal_id,currency_c
 ('184','11','1',NULL,'INR','5uqa95t5r35q',NULL,NULL,NULL,'0',NULL,'1','2017-11-29','2','552.00',NULL,NULL,NULL,'1','1','2017-11-29 07:02:12','2017-11-29 07:02:12','0','0.000000','0.000000',Null),
 ('185','11','1',NULL,'INR','5vqa95t5r35q',NULL,NULL,NULL,'0',NULL,'1','2017-11-30','2','600.00',NULL,NULL,NULL,'1','1','2017-11-30 07:02:12','2017-11-30 07:02:12','0','0.000000','0.000000',Null),
 ('186','15','1',NULL,'INR','5wqa95t5r35q',NULL,NULL,NULL,'0',NULL,'1','2017-11-30','2','120.00',NULL,NULL,NULL,'1','1','2017-11-30 07:02:12','2017-11-30 07:02:12','0','0.000000','0.000000',Null),
-('187','11','1',NULL,'INR','5xqa95t5r35q',NULL,NULL,NULL,'0',NULL,'1','2017-11-31','2','480.00',NULL,NULL,NULL,'1','1','2017-11-31 07:02:12','2017-11-31 07:02:12','0','0.000000','0.000000',Null),
+('187','11','1',NULL,'INR','5xqa95t5r35q',NULL,NULL,NULL,'0',NULL,'1','2017-11-30','2','480.00',NULL,NULL,NULL,'1','1','2017-11-30 07:02:12','2017-11-30 07:02:12','0','0.000000','0.000000',Null),
 ('188','11','1',NULL,'INR','5yqa95t5r35q',NULL,NULL,NULL,'0',NULL,'1','2017-12-01','2','547.00',NULL,NULL,NULL,'1','1','2017-12-01 03:00:00','2017-12-01 03:00:00','0','0.000000','0.000000',Null),
 ('189','16','1',NULL,'INR','5zqa95t5r35q',NULL,NULL,NULL,'0',NULL,'1','2017-12-01','2','250.00',NULL,NULL,NULL,'1','1','2017-12-01 03:00:00','2017-12-01 03:00:00','0','0.000000','0.000000',Null),
 ('190','11','1',NULL,'INR','6mqa96t6r36q',NULL,NULL,NULL,'0',NULL,'1','2017-12-02','2','547.00',NULL,NULL,NULL,'1','1','2017-12-02 03:00:00','2017-12-02 03:00:00','0','0.000000','0.000000',Null),
@@ -237,7 +237,7 @@ insert into acc_gl_journal_entry (id,account_id,office_id,reversal_id,currency_c
 ('236','11','1',NULL,'INR','0pqa00t0r30q',NULL,NULL,NULL,'0',NULL,'1','2017-12-30','2','547.00',NULL,NULL,NULL,'1','1','2017-12-30 03:00:00','2017-12-30 03:00:00','0','0.000000','0.000000',Null),
 ('237','15','1',NULL,'INR','0qqa00t0r30q',NULL,NULL,NULL,'0',NULL,'1','2017-12-30','2','200.00',NULL,NULL,NULL,'1','1','2017-12-30 03:00:00','2017-12-30 03:00:00','0','0.000000','0.000000',Null),
 ('238','1','1',NULL,'INR','0qqa00t0r30r',NULL,NULL,NULL,'0',NULL,'1','2017-10-30','2','9735.00',NULL,NULL,NULL,'1','1','2017-10-30 03:00:00','2017-11-30 03:00:00','0','0.000000','0.000000',Null),
-('239','2','1',NULL,'INR','0qqa00t0r30s',NULL,NULL,NULL,'0',NULL,'1','2017-10-30','2','345.00'"",NULL,NULL,NULL,'1','1','2017-10-30 03:00:00','2017-11-30 03:00:00','0','0.000000','0.000000',Null),
+('239','2','1',NULL,'INR','0qqa00t0r30s',NULL,NULL,NULL,'0',NULL,'1','2017-10-30','2','345.00',NULL,NULL,NULL,'1','1','2017-10-30 03:00:00','2017-11-30 03:00:00','0','0.000000','0.000000',Null),
 ('240','3','1',NULL,'INR','0qqa00t0r30t',NULL,NULL,NULL,'0',NULL,'1','2017-10-30','2','990.00',NULL,NULL,NULL,'1','1','2017-10-30 03:00:00','2017-11-30 03:00:00','0','0.000000','0.000000',Null),
 ('241','4','1',NULL,'INR','0qqa00t0r30u',NULL,NULL,NULL,'0',NULL,'1','2017-10-30','2','2321.00',NULL,NULL,NULL,'1','1','2017-10-30 03:00:00','2017-11-30 03:00:00','0','0.000000','0.000000',Null),
 ('242','1','1',NULL,'INR','898d97947777',NULL,NULL,NULL,'0',NULL,'1','2017-10-30','2','6793.00',NULL,NULL,NULL,'1','1','2017-10-30 03:00:00','2017-11-30 03:00:00','0','0.000000','0.000000',Null),

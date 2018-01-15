@@ -1,4 +1,4 @@
-insert into acc_gl_account(id,name,parent_id,hierarchy,gl_code,disabled,manual_journal_entries_allowed,account_usage,classification_enum,tag_id,description) values 
+INSERT INTO acc_gl_account(id,name,parent_id,hierarchy,gl_code,disabled,manual_journal_entries_allowed,account_usage,classification_enum,tag_id,description) VALUES
 ('1','Salary Mobilization',NULL,'.','M_Sal','0','1','1','5',13,NULL),
 ('2','Salary Loan Servicing',NULL,'.','LS_Sal','0','1','1','5',14,NULL),
 ('3','Salary Investment',NULL,'.','I_Sal','0','1','1','5',15,NULL),
