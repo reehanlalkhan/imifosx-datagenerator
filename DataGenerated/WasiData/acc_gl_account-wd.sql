@@ -17,4 +17,5 @@ INSERT INTO acc_gl_account(id,name,parent_id,hierarchy,gl_code,disabled,manual_j
 ('16','D-Overheads',NULL,'.','D_OVR','0','1','1','5',16,NULL),
 ('17','D-Loan Servicing',NULL,'.','D_Serv','0','1','1','5',14,NULL),
 ('18','C-Loan Servicing',NULL,'.','C_Serv','0','1','1','5',14,NULL),
-('19','BF Mobilisation Cost',NULL,'.','BF_M_Chrg','0','1','1','5',13,NULL);
+('19','BF Mobilisation Cost',NULL,'.','BF_M_Chrg','0','1','1','5',13,NULL),
+('20','C-Mobilization',NULL,'.','C_Mob','0','1','1','5',13,NULL);
